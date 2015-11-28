@@ -69,6 +69,6 @@ function gen() {
 
 }
 
-console.log(gen());
+module.exports = gen;
 
 
