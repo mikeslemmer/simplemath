@@ -14,7 +14,8 @@ app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 app.get('/', function(req, res) { 
-    res.render("index");
+    var gen = require('./generate');
+    res.render("index", {data: gen(100)});
 });
 
 app.listen(app.get('port'), function() {

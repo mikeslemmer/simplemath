@@ -46,26 +46,30 @@ function gen_cbrt() {
     return "<p>&#8731;" +  a3 + "</p>";
 }
 
-function gen() {
+function gen(count) {
 
-    var n = Math.floor(Math.random() * 8);
-    switch(n) {
-        case 0:
-        case 1:
-            return gen_add_sub();
-        case 2:
-            return gen_mul();
-        case 3: 
-            return gen_div();
-        case 4:
-            return gen_squared();
-        case 5:
-            return gen_cubed();
-        case 6:
-            return gen_sqrt();
-        case 7:
-            return gen_cbrt();
+    var str = "";
+    for (var i = 0; i < count; i++) {
+        var n = Math.floor(Math.random() * 8);
+        switch(n) {
+            case 0:
+            case 1:
+                str += gen_add_sub(); break;
+            case 2:
+                str += gen_mul(); break;
+            case 3: 
+                str += gen_div(); break;
+            case 4:
+                str += gen_squared(); break;
+            case 5:
+                str += gen_cubed(); break;
+            case 6:
+                str += gen_sqrt(); break;
+            case 7:
+                str += gen_cbrt(); break;
+        }
     }
+    return str;
 
 }
 
