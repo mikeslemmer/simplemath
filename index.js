@@ -10,7 +10,7 @@ app.set('views', __dirname + '/views');
 
 // Turn on handlebars.
 var exphbs = require('express-handlebars');
-app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
+app.engine('.hbs', exphbs.engine({defaultLayout: 'single', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 app.get('/', function(req, res) { 
